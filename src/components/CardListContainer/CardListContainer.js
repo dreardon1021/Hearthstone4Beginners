@@ -29,15 +29,6 @@ class CardListContainer extends Component {
                   id={card.cardId}
                   key={card.cardId}
                   name={card.name}
-                  cardSet={card.cardSet}
-                  type={card.type}
-                  faction={card.faction}
-                  rarity={card.rarity}
-                  cost={card.cost}
-                  text={card.text}
-                  flavorText={card.flavor}
-                  artist={card.artist}
-                  playerClass={card.playerClass}
                   img={card.img}
                   imgGold={card.imgGold}
                   addCardToDeck={this.props.addCardToDeck}

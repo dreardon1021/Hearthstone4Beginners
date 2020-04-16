@@ -1,0 +1,7 @@
+.saved-decks-container {
+  min-height: 20em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}

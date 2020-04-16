@@ -22,7 +22,7 @@ class App extends Component {
       <main>
         <Nav />
         <section className="content-area">
-          <SideBar currentlySelectedDeck={this.state.currentDeck}/>
+          <SideBar currentDeck={this.state.currentDeck} currentlySelectedDeck={this.state.currentDeck}/>
           <CardListContainer addCardToDeck={this.addCardToDeck}/>
         </section>
       </main>

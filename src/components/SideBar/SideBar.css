@@ -13,5 +13,6 @@ aside {
 }
 
 .current-deck-area {
+  width: 95%;
   height: fit-content;
 }

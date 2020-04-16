@@ -12,8 +12,8 @@ class CurrentDeck extends Component {
   render() {
     return(
       <section className="current-deck-cards">
-        <h2>Current Deck</h2>
-        <ol>
+        <h2 className="sidebar-header">Current Deck</h2>
+        <ol className="deck-list">
           {this.props.currentlySelectedDeck.map(card => {
             return (<li>{card}</li>)
           })}
