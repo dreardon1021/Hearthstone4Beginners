@@ -20,10 +20,6 @@ class CardListContainer extends Component {
       .catch(err => console.error(err.message))
   }
 
-  addDefaultSrc = e => {
-    e.target.src = '../../images/ErrorCard.png'
-  }
-
   render() {
     return(
     <section className="card-list-container">
@@ -44,7 +40,6 @@ class CardListContainer extends Component {
                   playerClass={card.playerClass}
                   img={card.img}
                   imgGold={card.imgGold}
-                  addDefaultSrc={this.addDefaultSrc}
                 />)
         } else {
           return null
