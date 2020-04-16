@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Card from '../Card/Card'
 import './CardListContainer.css'
 import { getClassicCards } from '../../apicalls'
 import { loadClassicCards } from '../../actions'
@@ -8,7 +9,7 @@ class CardListContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      currentPage: 'cardList'
   }}
 
   componentDidMount = () => {
@@ -19,10 +20,36 @@ class CardListContainer extends Component {
       .catch(err => console.error(err.message))
   }
 
+  addDefaultSrc = e => {
+    e.target.src = '../../images/ErrorCard.png'
+  }
+
   render() {
     return(
     <section className="card-list-container">
-      <p>test</p>
+      {this.props.classicCards.map(card => {
+        if (card.collectible === true) {
+          return (<Card
+                  id={card.cardId}
+                  key={card.cardId}
+                  name={card.name}
+                  cardSet={card.cardSet}
+                  type={card.type}
+                  faction={card.faction}
+                  rarity={card.rarity}
+                  cost={card.cost}
+                  text={card.text}
+                  flavorText={card.flavor}
+                  artist={card.artist}
+                  playerClass={card.playerClass}
+                  img={card.img}
+                  imgGold={card.imgGold}
+                  addDefaultSrc={this.addDefaultSrc}
+                />)
+        } else {
+          return null
+        }
+      })}
     </section>
     )
   }
@@ -32,6 +59,10 @@ const mapDispatchToProps = dispatch => ({
   loadClassicCards: classicCards => dispatch(loadClassicCards(classicCards))
 })
 
+const mapStateToProps = state => ({
+  classicCards: state.loadCards
+})
 
 
-export default connect(null, mapDispatchToProps)(CardListContainer)
+
+export default connect(mapStateToProps, mapDispatchToProps)(CardListContainer)
