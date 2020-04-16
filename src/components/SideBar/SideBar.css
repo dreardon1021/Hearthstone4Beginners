@@ -1,0 +1,12 @@
+aside {
+  width: 25%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow-y: scroll;
+  background-color: #E9E9E9;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+}

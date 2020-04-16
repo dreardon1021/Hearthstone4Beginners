@@ -1,0 +1,5 @@
+.card-list-container {
+  width: 75%;
+  min-height: 100vh;
+  height: fit-content;
+}
