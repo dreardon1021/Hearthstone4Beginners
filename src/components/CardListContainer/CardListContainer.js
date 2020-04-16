@@ -40,6 +40,7 @@ class CardListContainer extends Component {
                   playerClass={card.playerClass}
                   img={card.img}
                   imgGold={card.imgGold}
+                  addCardToDeck={this.props.addCardToDeck}
                 />)
         } else {
           return null

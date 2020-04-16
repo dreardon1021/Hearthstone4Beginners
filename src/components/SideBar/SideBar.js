@@ -1,11 +1,15 @@
 import React from 'react';
 import './SideBar.css';
 import Form from '../Form/Form'
+import CurrentDeck from '../CurrentDeck/CurrentDeck'
 
-const SideBar = () => {
+const SideBar = ({ currentlySelectedDeck }) => {
   return(
     <aside>
-      <Form />
+      <div className="current-deck-area">
+        <Form />
+        <CurrentDeck currentlySelectedDeck={currentlySelectedDeck} />
+      </div>
     </aside>
   )
 }
