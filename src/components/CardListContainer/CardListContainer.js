@@ -29,12 +29,14 @@ class CardListContainer extends Component {
         }
       }) :
     this.props.currentDeck.map(card => {
+      let possibleCard = this.props.classicCards.filter(cardName => cardName.name === card)
+      let cardInfo = possibleCard.find(cardStats => cardStats.collectible === true)
       return (<Card
-              id={card.cardId}
-              key={card.cardId}
-              name={card.name}
-              img={card.img}
-              imgGold={card.imgGold}
+              id={cardInfo.cardId}
+              key={cardInfo.cardId}
+              name={cardInfo.name}
+              img={cardInfo.img}
+              imgGold={cardInfo.imgGold}
               addCardToDeck={this.props.addCardToDeck}
             />)
     })
