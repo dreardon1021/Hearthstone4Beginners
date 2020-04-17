@@ -43,13 +43,11 @@ class CardListContainer extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  loadClassicCards: classicCards => dispatch(loadClassicCards(classicCards))
+  loadClassicCards: classicCards => dispatch(loadClassicCards(classicCards)),
 })
 
 const mapStateToProps = state => ({
-  classicCards: state.loadCards
+  classicCards: state.loadCards,
 })
-
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(CardListContainer)
