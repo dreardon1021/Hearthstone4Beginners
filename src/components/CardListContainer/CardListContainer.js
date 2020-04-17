@@ -29,17 +29,9 @@ class CardListContainer extends Component {
                   id={card.cardId}
                   key={card.cardId}
                   name={card.name}
-                  cardSet={card.cardSet}
-                  type={card.type}
-                  faction={card.faction}
-                  rarity={card.rarity}
-                  cost={card.cost}
-                  text={card.text}
-                  flavorText={card.flavor}
-                  artist={card.artist}
-                  playerClass={card.playerClass}
                   img={card.img}
                   imgGold={card.imgGold}
+                  addCardToDeck={this.props.addCardToDeck}
                 />)
         } else {
           return null
@@ -51,13 +43,11 @@ class CardListContainer extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  loadClassicCards: classicCards => dispatch(loadClassicCards(classicCards))
+  loadClassicCards: classicCards => dispatch(loadClassicCards(classicCards)),
 })
 
 const mapStateToProps = state => ({
-  classicCards: state.loadCards
+  classicCards: state.loadCards,
 })
-
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(CardListContainer)
