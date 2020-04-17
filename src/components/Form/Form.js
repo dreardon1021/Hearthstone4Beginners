@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './Form.css';
+import { connect } from 'react-redux';
+import { saveDeck } from '../../actions'
+
 
 class Form extends Component {
   constructor(props) {
@@ -15,6 +18,8 @@ class Form extends Component {
 
   save = e => {
     e.preventDefault()
+    let deckToBeSaved = {[this.state.name]: this.props.currentDeck}
+    this.props.saveDeck(deckToBeSaved)
   }
 
   render() {
@@ -27,5 +32,8 @@ class Form extends Component {
   }
 }
 
+const mapDispatchToProps = dispatch => ({
+  saveDeck: deck => dispatch(saveDeck(deck))
+})
 
-export default Form
+export default connect(null, mapDispatchToProps)(Form)
