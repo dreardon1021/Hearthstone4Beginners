@@ -7,7 +7,7 @@ const CurrentDeck = props => {
       <h2 className="sidebar-header">Current Deck</h2>
       <ol className="deck-list">
         {props.currentlySelectedDeck.map(card => {
-          return (<li key={card.id}>{card}</li>)
+          return (<li key={Date.now()}>{card}</li>)
         })}
       </ol>
     </section>

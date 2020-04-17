@@ -9,7 +9,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentDeck: []
+      currentDeck: [],
+      currentPage: 'home'
     }
   }
 
@@ -18,10 +19,14 @@ class App extends Component {
     this.setState({currentDeck: updatedDeck})
   }
 
+  changePage = page => {
+    this.setState({currentPage: page})
+  }
+
   render() {
     return(
       <main>
-        <Nav />
+        <Nav changePage={this.changePage} currentPage={this.state.currentPage}/>
         <Switch>
         <Route
             path="/" exact
@@ -34,12 +39,12 @@ class App extends Component {
         />
         <Route
             path="/current-deck" exact
-            component={() =>
+            render={routeValues => (
               <section className="content-area">
                 <SideBar currentDeck={this.state.currentDeck} currentlySelectedDeck={this.state.currentDeck}/>
-                <CardListContainer addCardToDeck={this.addCardToDeck}/>
+                <CardListContainer addCardToDeck={this.addCardToDeck} currentDeck={this.state.currentDeck} {...routeValues}/>
               </section>
-            }
+            )}
         />
         </Switch>
       </main>
