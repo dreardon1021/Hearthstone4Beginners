@@ -4,6 +4,9 @@ import Nav from '../Nav/Nav';
 import SideBar from '../SideBar/SideBar';
 import CardListContainer from '../CardListContainer/CardListContainer';
 import { Route, Switch } from 'react-router-dom';
+import { getClassicCards } from '../../apicalls';
+import { connect } from 'react-redux';
+import { loadClassicCards } from '../../actions'
 
 class App extends Component {
   constructor() {
@@ -12,6 +15,14 @@ class App extends Component {
       currentDeck: [],
       currentPage: 'home'
     }
+  }
+
+  componentDidMount = () => {
+    getClassicCards()
+      .then(classicCards => {
+        this.props.loadClassicCards(classicCards)
+      })
+      .catch(err => console.error(err.message))
   }
 
   addCardToDeck = cardName => {
@@ -32,17 +43,27 @@ class App extends Component {
             path="/" exact
             component={() =>
               <section className="content-area">
-                <SideBar currentDeck={this.state.currentDeck} currentlySelectedDeck={this.state.currentDeck}/>
-                <CardListContainer addCardToDeck={this.addCardToDeck}/>
+                <SideBar currentDeck={this.state.currentDeck}/>
+                <CardListContainer
+                  addCardToDeck={this.addCardToDeck}
+                  currentDeck={this.state.currentDeck}
+                  currentPage={this.state.currentPage}
+                  changePage={this.changePage}
+                  />
               </section>
             }
         />
         <Route
             path="/current-deck" exact
-            render={routeValues => (
+            component={() => (
               <section className="content-area">
-                <SideBar currentDeck={this.state.currentDeck} currentlySelectedDeck={this.state.currentDeck}/>
-                <CardListContainer addCardToDeck={this.addCardToDeck} currentDeck={this.state.currentDeck} {...routeValues}/>
+                <SideBar currentDeck={this.state.currentDeck}/>
+                <CardListContainer
+                  addCardToDeck={this.addCardToDeck}
+                  currentDeck={this.state.currentDeck}
+                  currentPage={this.state.currentPage}
+                  changePage={this.changePage}
+                  />
               </section>
             )}
         />
@@ -52,4 +73,10 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+  loadClassicCards: classicCards => dispatch(loadClassicCards(classicCards)),
+})
+
+
+
+export default connect(null, mapDispatchToProps)(App);
