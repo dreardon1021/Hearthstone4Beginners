@@ -51,7 +51,7 @@ class App extends Component {
     this.setState({currentPage: page})
   }
 
-  clearDeckStateOnSave = () => {
+  resetCurrentDeck = () => {
     this.setState({currentDeck: []})
   }
 
@@ -67,7 +67,7 @@ class App extends Component {
                 <SideBar
                   currentDeck={this.state.currentDeck}
                   changeDeck={this.changeDeck}
-                  clearDeckStateOnSave={this.clearDeckStateOnSave}
+                  clearDeckStateOnSave={this.resetCurrentDeck}
                   />
                 <CardListContainer
                   addCardToDeck={this.addCardToDeck}
@@ -85,7 +85,7 @@ class App extends Component {
                 <SideBar
                   currentDeck={this.state.currentDeck}
                   changeDeck={this.changeDeck}
-                  clearDeckStateOnSave={this.clearDeckStateOnSave}
+                  clearDeckStateOnSave={this.resetCurrentDeck}
                   />
                 <ViewDeckContainer
                   addCardToDeck={this.addCardToDeck}
@@ -107,7 +107,7 @@ class App extends Component {
                 <SideBar
                   currentDeck={this.state.currentDeck}
                   changeDeck={this.changeDeck}
-                  clearDeckStateOnSave={this.clearDeckStateOnSave}
+                  clearDeckStateOnSave={this.resetCurrentDeck}
                   />
                 <CardDetails {...card}/>
               </section>)
