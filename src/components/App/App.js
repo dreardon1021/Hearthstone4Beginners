@@ -40,6 +40,12 @@ class App extends Component {
     }
   }
 
+  changeDeck = deckName => {
+    let savedDeckNames = Object.keys(this.props.savedDecks)
+    let updatedCurrentDeckName = savedDeckNames.find(savedDeck => savedDeck === deckName)
+    console.log(updatedCurrentDeckName)
+  }
+
   changePage = page => {
     this.setState({currentPage: page})
   }
@@ -53,7 +59,7 @@ class App extends Component {
             path="/" exact
             component={() =>
               <section className="content-area">
-                <SideBar currentDeck={this.state.currentDeck}/>
+                <SideBar currentDeck={this.state.currentDeck} changeDeck={this.changeDeck}/>
                 <CardListContainer
                   addCardToDeck={this.addCardToDeck}
                   removeCardFromDeck={this.removeCardFromDeck}
@@ -67,7 +73,7 @@ class App extends Component {
             path="/current-deck" exact
             component={() => (
               <section className="content-area">
-                <SideBar currentDeck={this.state.currentDeck}/>
+                <SideBar currentDeck={this.state.currentDeck} changeDeck={this.changeDeck}/>
                 <ViewDeckContainer
                   addCardToDeck={this.addCardToDeck}
                   currentDeck={this.state.currentDeck}
@@ -85,7 +91,7 @@ class App extends Component {
               return match.params.id === classicCard.cardId
             })
             return (<section className="content-area">
-                <SideBar currentDeck={this.state.currentDeck}/>
+                <SideBar currentDeck={this.state.currentDeck} changeDeck={this.changeDeck}/>
                 <CardDetails {...card}/>
               </section>)
           }}
@@ -101,7 +107,8 @@ const mapDispatchToProps = dispatch => ({
 })
 
 const mapStateToProps = state => ({
-  classicCards: state.loadCards
+  classicCards: state.loadCards,
+  savedDecks: state.savedDecks
 })
 
 
