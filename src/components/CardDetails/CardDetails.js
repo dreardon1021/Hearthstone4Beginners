@@ -31,7 +31,7 @@ const CardDetails = props =>  {
     <section className="card-details">
       <h2>Card Name: {props.name}</h2>
       <div className="details-container">
-        <img className="details-img" src={props.imgGold} alt={props.name}/>
+        <img className="details-img" onError={(e)=>{e.target.onerror = null; e.target.src="http://wow.zamimg.com/images/hearthstone/backs/original/Card_Back_Default.png"}} src={props.imgGold} alt={props.name}/>
         {cardToRender}
       </div>
       <div className="details-button-container">
