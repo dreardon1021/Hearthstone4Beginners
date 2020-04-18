@@ -51,6 +51,10 @@ class App extends Component {
     this.setState({currentPage: page})
   }
 
+  clearDeckStateOnSave = () => {
+    this.setState({currentDeck: []})
+  }
+
   render() {
     return(
       <main>
@@ -60,7 +64,11 @@ class App extends Component {
             path="/" exact
             component={() =>
               <section className="content-area">
-                <SideBar currentDeck={this.state.currentDeck} changeDeck={this.changeDeck}/>
+                <SideBar
+                  currentDeck={this.state.currentDeck}
+                  changeDeck={this.changeDeck}
+                  clearDeckStateOnSave={this.clearDeckStateOnSave}
+                  />
                 <CardListContainer
                   addCardToDeck={this.addCardToDeck}
                   removeCardFromDeck={this.removeCardFromDeck}
@@ -74,7 +82,11 @@ class App extends Component {
             path="/current-deck" exact
             component={() => (
               <section className="content-area">
-                <SideBar currentDeck={this.state.currentDeck} changeDeck={this.changeDeck}/>
+                <SideBar
+                  currentDeck={this.state.currentDeck}
+                  changeDeck={this.changeDeck}
+                  clearDeckStateOnSave={this.clearDeckStateOnSave}
+                  />
                 <ViewDeckContainer
                   addCardToDeck={this.addCardToDeck}
                   currentDeck={this.state.currentDeck}
@@ -92,7 +104,11 @@ class App extends Component {
               return match.params.id === classicCard.cardId
             })
             return (<section className="content-area">
-                <SideBar currentDeck={this.state.currentDeck} changeDeck={this.changeDeck}/>
+                <SideBar
+                  currentDeck={this.state.currentDeck}
+                  changeDeck={this.changeDeck}
+                  clearDeckStateOnSave={this.clearDeckStateOnSave}
+                  />
                 <CardDetails {...card}/>
               </section>)
           }}

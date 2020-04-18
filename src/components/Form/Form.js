@@ -20,6 +20,7 @@ class Form extends Component {
     e.preventDefault()
     let deckToBeSaved = {[this.state.name]: this.props.currentDeck}
     this.props.saveDeck(deckToBeSaved)
+    this.props.clearDeckStateOnSave()
   }
 
   render() {
