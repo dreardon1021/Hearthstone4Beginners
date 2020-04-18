@@ -16,6 +16,7 @@ const ViewDeckContainer = props => {
               img={cardInfo.img}
               imgGold={cardInfo.imgGold}
               addCardToDeck={props.addCardToDeck}
+              removeCardFromDeck={props.removeCardFromDeck}
             />)
     })
   } else {

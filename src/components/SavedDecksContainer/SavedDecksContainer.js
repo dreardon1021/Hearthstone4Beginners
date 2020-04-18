@@ -9,7 +9,7 @@ const SavedDecksContainer = (props) => {
       <ul>
       {props.savedDecks.map(deck => {
         let deckName = Object.keys(deck)
-        return (<li>{deckName[0]}</li>)
+        return (<li><button className="deck-link">{deckName[0]}</button></li>)
       })}
       </ul>
     </section>

@@ -13,6 +13,8 @@ const CardListContainer = props => {
               img={card.img}
               imgGold={card.imgGold}
               addCardToDeck={props.addCardToDeck}
+              removeCardFromDeck={props.removeCardFromDeck}
+              currentPage={props.currentPage}
             />)
       } else {
         return null

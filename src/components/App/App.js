@@ -9,7 +9,6 @@ import { Route, Switch } from 'react-router-dom';
 import { getClassicCards } from '../../apicalls';
 import { connect } from 'react-redux';
 import { loadClassicCards } from '../../actions'
-import { statement } from '@babel/template';
 
 class App extends Component {
   constructor() {
@@ -33,6 +32,14 @@ class App extends Component {
     this.setState({currentDeck: updatedDeck})
   }
 
+  removeCardFromDeck = cardName => {
+    if(this.state.currentDeck.includes(cardName)) {
+      let updatedDeck = this.state.currentDeck
+      this.state.currentDeck.splice(this.state.currentDeck.indexOf(cardName), 1)
+      this.setState({currentDeck: updatedDeck})
+    }
+  }
+
   changePage = page => {
     this.setState({currentPage: page})
   }
@@ -49,6 +56,7 @@ class App extends Component {
                 <SideBar currentDeck={this.state.currentDeck}/>
                 <CardListContainer
                   addCardToDeck={this.addCardToDeck}
+                  removeCardFromDeck={this.removeCardFromDeck}
                   currentPage={this.state.currentPage}
                   changePage={this.changePage}
                   />
@@ -65,6 +73,7 @@ class App extends Component {
                   currentDeck={this.state.currentDeck}
                   currentPage={this.state.currentPage}
                   changePage={this.changePage}
+                  removeCardFromDeck={this.removeCardFromDeck}
                   />
               </section>
             )}
