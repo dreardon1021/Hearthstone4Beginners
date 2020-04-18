@@ -1,0 +1,47 @@
+.card-details {
+  width: 75%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.details-container {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card-detail-list {
+  width: 50%;
+  height: fit-content;
+}
+
+.details-button-container {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.details-add-btn {
+  background-color: #327BBD;
+  color: white;
+  width: 45%;
+  height: 2em;
+}
+
+.details-nav-link {
+  background-color: #327BBD;
+  color: white;
+  width: 45%;
+  height: 2em;
+}
+
+.details-back-btn {
+  background-color: #327BBD;
+  color: white;
+  width: 100%;
+  height: 2em;
+}

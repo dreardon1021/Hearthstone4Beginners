@@ -10,3 +10,15 @@
 ul {
   width: 80%;
 }
+
+.deck-link {
+  background: none;
+  border: none;
+  position: relative;
+  transition: left 1s;
+}
+
+.deck-link:hover {
+  left: 0.5em;
+  color: blue;
+}

@@ -1,27 +1,29 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './CurrentDeck.css'
+import { connect } from 'react-redux'
+import { NavLink } from 'react-router-dom';
 
-class CurrentDeck extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+const CurrentDeck = props => {
 
-    }
-  }
+  let cardsInDeck = props.currentlySelectedDeck.map(currentCard => {
+    return props.classicCards.find(cardName => cardName.name === currentCard && cardName.collectible === true)
+  })
 
-  render() {
-    return(
-      <section className="current-deck-cards">
-        <h2 className="sidebar-header">Current Deck</h2>
-        <ol className="deck-list">
-          {this.props.currentlySelectedDeck.map(card => {
-            return (<li>{card}</li>)
-          })}
-        </ol>
-      </section>
-    )
-  }
+  return(
+    <section className="current-deck-cards">
+      <h2 className="sidebar-header">Current Deck</h2>
+      <ol className="deck-list">
+        {cardsInDeck.map(card => {
+          return (<NavLink to={`/card-details/${card.cardId}`} className="deck-card-name"><li key={Date.now()}>{card.name}</li></NavLink>)
+        })}
+      </ol>
+    </section>
+  )
 }
 
+const mapStateToProps = state => ({
+  classicCards: state.loadCards
+})
 
-export default CurrentDeck
+
+export default connect(mapStateToProps)(CurrentDeck)

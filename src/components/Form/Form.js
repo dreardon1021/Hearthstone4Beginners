@@ -26,7 +26,7 @@ class Form extends Component {
     return(
       <form>
         <input onChange={this.updateDeckNameState} placeholder="Enter Deck Name" type="text"/>
-        <button onClick={e => this.save(e)} className="save-btn">Save</button>
+        <button disabled={!this.state.name} onClick={e => this.save(e)} className="save-btn">Save</button>
       </form>
     )
   }
