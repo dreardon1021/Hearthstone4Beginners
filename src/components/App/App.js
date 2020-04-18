@@ -41,9 +41,10 @@ class App extends Component {
   }
 
   changeDeck = deckName => {
-    let savedDeckNames = Object.keys(this.props.savedDecks)
-    let updatedCurrentDeckName = savedDeckNames.find(savedDeck => savedDeck === deckName)
-    console.log(updatedCurrentDeckName)
+    let savedDeckNames = this.props.savedDecks.map(deck => Object.keys(deck))
+    let updatedCurrentDeckName = savedDeckNames.find(savedDeck => savedDeck[0] === deckName)
+    let newCurrentDeck = this.props.savedDecks.find(savedDeck => savedDeck[updatedCurrentDeckName[0]])
+    this.setState({currentDeck: newCurrentDeck[updatedCurrentDeckName]})
   }
 
   changePage = page => {
