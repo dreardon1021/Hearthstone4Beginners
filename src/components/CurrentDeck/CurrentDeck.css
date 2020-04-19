@@ -16,3 +16,15 @@
 .deck-list {
   width: 80%;
 }
+
+.deck-card-name {
+  text-decoration: none;
+  color: black;
+  position: relative;
+  transition: left 1s;
+}
+
+.deck-card-name:hover {
+  left: 0.5em;
+  color: blue;
+}

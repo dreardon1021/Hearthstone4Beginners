@@ -4,11 +4,11 @@ import Form from '../Form/Form'
 import CurrentDeck from '../CurrentDeck/CurrentDeck'
 import SavedDecksContainer from '../SavedDecksContainer/SavedDecksContainer'
 
-const SideBar = ({ currentDeck, changeDeck }) => {
+const SideBar = ({ currentDeck, changeDeck, clearDeckStateOnSave }) => {
   return(
     <aside>
       <div className="current-deck-area">
-        <Form currentDeck={currentDeck}/>
+        <Form currentDeck={currentDeck} clearDeckStateOnSave={clearDeckStateOnSave}/>
         <CurrentDeck currentlySelectedDeck={currentDeck}/>
       </div>
       <SavedDecksContainer changeDeck={changeDeck}/>

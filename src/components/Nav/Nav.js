@@ -3,7 +3,7 @@ import './Nav.css';
 import { NavLink } from 'react-router-dom'
 
 
-const Nav = ({ changePage, currentPage }) => {
+const Nav = ({ changePage, currentPage, clearDeckStateOnSave }) => {
   let navBtn = currentPage === "current-deck" ?
     (<NavLink to="/" className="nav-link-el">
       <button className="nav-button" onClick={() => changePage('home')}>Back to Card List</button>

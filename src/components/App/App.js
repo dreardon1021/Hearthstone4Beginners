@@ -41,13 +41,18 @@ class App extends Component {
   }
 
   changeDeck = deckName => {
-    let savedDeckNames = Object.keys(this.props.savedDecks)
-    let updatedCurrentDeckName = savedDeckNames.find(savedDeck => savedDeck === deckName)
-    console.log(updatedCurrentDeckName)
+    let savedDeckNames = this.props.savedDecks.map(deck => Object.keys(deck))
+    let updatedCurrentDeckName = savedDeckNames.find(savedDeck => savedDeck[0] === deckName)
+    let newCurrentDeck = this.props.savedDecks.find(savedDeck => savedDeck[updatedCurrentDeckName[0]])
+    this.setState({currentDeck: newCurrentDeck[updatedCurrentDeckName]})
   }
 
   changePage = page => {
     this.setState({currentPage: page})
+  }
+
+  resetCurrentDeck = () => {
+    this.setState({currentDeck: []})
   }
 
   render() {
@@ -59,7 +64,11 @@ class App extends Component {
             path="/" exact
             component={() =>
               <section className="content-area">
-                <SideBar currentDeck={this.state.currentDeck} changeDeck={this.changeDeck}/>
+                <SideBar
+                  currentDeck={this.state.currentDeck}
+                  changeDeck={this.changeDeck}
+                  clearDeckStateOnSave={this.resetCurrentDeck}
+                  />
                 <CardListContainer
                   addCardToDeck={this.addCardToDeck}
                   removeCardFromDeck={this.removeCardFromDeck}
@@ -73,7 +82,11 @@ class App extends Component {
             path="/current-deck" exact
             component={() => (
               <section className="content-area">
-                <SideBar currentDeck={this.state.currentDeck} changeDeck={this.changeDeck}/>
+                <SideBar
+                  currentDeck={this.state.currentDeck}
+                  changeDeck={this.changeDeck}
+                  clearDeckStateOnSave={this.resetCurrentDeck}
+                  />
                 <ViewDeckContainer
                   addCardToDeck={this.addCardToDeck}
                   currentDeck={this.state.currentDeck}
@@ -91,7 +104,11 @@ class App extends Component {
               return match.params.id === classicCard.cardId
             })
             return (<section className="content-area">
-                <SideBar currentDeck={this.state.currentDeck} changeDeck={this.changeDeck}/>
+                <SideBar
+                  currentDeck={this.state.currentDeck}
+                  changeDeck={this.changeDeck}
+                  clearDeckStateOnSave={this.resetCurrentDeck}
+                  />
                 <CardDetails {...card}/>
               </section>)
           }}

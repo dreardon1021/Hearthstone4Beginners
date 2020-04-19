@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom';
 
 const CurrentDeck = props => {
-
   let cardsInDeck = props.currentlySelectedDeck.map(currentCard => {
     return props.classicCards.find(cardName => cardName.name === currentCard && cardName.collectible === true)
   })

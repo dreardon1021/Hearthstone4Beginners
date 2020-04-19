@@ -3,7 +3,7 @@ export const loadClassicCards = cards => ({
   cards
 })
 
-export const saveDeck = (deck, name) => ({
+export const saveDeck = deck => ({
   type: 'SAVE_DECK',
   deck
 })
