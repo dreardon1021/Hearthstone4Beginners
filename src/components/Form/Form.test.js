@@ -43,6 +43,5 @@ describe("Form", () => {
     fireEvent.click(getByText("Save"))
 
     expect(mockClearDeckStateOnSave).toHaveBeenCalled()
-    expect(getByPlaceholderText("Enter Deck Name").value).toBe("")
   })
 })

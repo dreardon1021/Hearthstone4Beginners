@@ -4,8 +4,8 @@ import { NavLink } from 'react-router-dom'
 
 const Card = ({id, key, name, imgGold, addCardToDeck, removeCardFromDeck, currentPage }) => {
   let addOrRemoveButton = currentPage === 'home' ?
-    (<button id={name} data-testid={name + '1'} onClick={e => addCardToDeck(e.target.id)} className="cardList-btn-add">Add</button>) :
-    (<button id={name} data-testid={name + '1'} onClick={e => removeCardFromDeck(e.target.id)} className="cardList-btn-remove">Remove</button>)
+    (<button id={name} data-testid={name + '-add'} onClick={e => addCardToDeck(e.target.id)} className="cardList-btn-add">Add</button>) :
+    (<button id={name} data-testid={name + '-rmv'} onClick={e => removeCardFromDeck(e.target.id)} className="cardList-btn-remove">Remove</button>)
 
   return(
     <section data-testid={id} key={key} className="card-container">
