@@ -153,7 +153,7 @@ describe('App', () => {
       cardId: 'EX1_144',
       name: 'Shadowstep',
       collectible: true,
-      imgGold: 'http://media.services.zam.com/v1/media/byName/hs/cards/enus/animated/EX1_144_premium.gif',
+      imgGold: 'http://media.services.zam.com/v1/media/byName/hs/cards/enus/animated/EX1_144_premium.gif'
     },
     {
       cardId: 'CS2_188',
@@ -243,14 +243,15 @@ describe('App', () => {
       const mockCards = [
         {
         cardId: 'EX1_144',
+        name: 'Shadowstep',
         collectible: true,
-        imgGold: 'http://media.services.zam.com/v1/media/byName/hs/cards/enus/animated/EX1_144_premium.gif',
+        imgGold: 'http://media.services.zam.com/v1/media/byName/hs/cards/enus/animated/EX1_144_premium.gif'
       }
     ]
 
     getClassicCards.mockResolvedValueOnce(mockCards)
 
-    const { getByText } = render(
+    const { getByText, getByTestId } = render(
       <Provider store={store}>
         <Router>
           <App/>
@@ -258,7 +259,8 @@ describe('App', () => {
       </Provider>
     )
 
-    const viewBtn = await waitForElement(() => getByText("View"))
+    const viewBtn = await waitForElement(() => getByTestId("Shadowstep"))
+
     fireEvent.click(viewBtn)
 
     expect(getByText("Card Name: Shadowstep")).toBeInTheDocument()
