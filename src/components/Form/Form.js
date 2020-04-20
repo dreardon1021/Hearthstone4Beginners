@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Form.css';
 import { connect } from 'react-redux';
 import { saveDeck } from '../../actions'
+import PropTypes from "prop-types";
 
 
 class Form extends Component {
@@ -38,3 +39,8 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(null, mapDispatchToProps)(Form)
+
+Form.propTypes = {
+  saveDeck: PropTypes.func,
+  clearDeckStateOnSave: PropTypes.func
+}

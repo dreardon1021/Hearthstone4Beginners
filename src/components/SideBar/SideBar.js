@@ -1,8 +1,9 @@
 import React from 'react';
 import './SideBar.css';
-import Form from '../Form/Form'
-import CurrentDeck from '../CurrentDeck/CurrentDeck'
-import SavedDecksContainer from '../SavedDecksContainer/SavedDecksContainer'
+import Form from '../Form/Form';
+import CurrentDeck from '../CurrentDeck/CurrentDeck';
+import SavedDecksContainer from '../SavedDecksContainer/SavedDecksContainer';
+import PropTypes from "prop-types";
 
 const SideBar = ({ currentDeck, changeDeck, clearDeckStateOnSave }) => {
   return(
@@ -17,3 +18,9 @@ const SideBar = ({ currentDeck, changeDeck, clearDeckStateOnSave }) => {
 }
 
 export default SideBar
+
+SideBar.propTypes = {
+  currentDeck: PropTypes.array,
+  changeDeck: PropTypes.func,
+  clearDeckStateOnSave: PropTypes.func
+}
