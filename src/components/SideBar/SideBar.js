@@ -6,7 +6,7 @@ import SavedDecksContainer from '../SavedDecksContainer/SavedDecksContainer'
 
 const SideBar = ({ currentDeck, changeDeck, clearDeckStateOnSave }) => {
   return(
-    <aside>
+    <aside data-testid="sidebar">
       <div className="current-deck-area">
         <Form currentDeck={currentDeck} clearDeckStateOnSave={clearDeckStateOnSave}/>
         <CurrentDeck currentlySelectedDeck={currentDeck}/>
