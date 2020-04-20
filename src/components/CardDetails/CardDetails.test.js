@@ -50,6 +50,50 @@ describe('CardDetails', () => {
     expect(getByAltText("Flare")).toBeInTheDocument()
   })
 
+  it('should render what we expect if card is a minion', () => {
+    const store = createStore(rootReducer)
+
+    const { getByText, getByAltText } = render(
+      <Provider store={store}>
+        <Router>
+          <CardDetails
+            attack={1}
+            cardId={"tt_010a"}
+            cardSet={"Classic"}
+            cost={1}
+            dbfId={"1086"}
+            text={"test"}
+            health={3}
+            img={"http://wow.zamimg.com/images/hearthstone/cards/enus/original/tt_010a.png"}
+            imgGold={"http://wow.zamimg.com/images/hearthstone/cards/enus/animated/tt_010a_premium.gif"}
+            locale={"enUS"}
+            name={"Spellbender"}
+            playerClass={"Mage"}
+            type={"Minion"}
+            rarity={"Rare"}
+            flavor={"spicy"}
+            artist={"ME"}
+          />
+        </Router>
+      </Provider>
+    )
+
+    expect(getByText("Mana Cost: 1")).toBeInTheDocument()
+    expect(getByText("Attack: 1")).toBeInTheDocument()
+    expect(getByText("Health: 3")).toBeInTheDocument()
+    expect(getByText("Player Class: Mage")).toBeInTheDocument()
+    expect(getByText("Text: test")).toBeInTheDocument()
+    expect(getByText("Card Type: Minion")).toBeInTheDocument()
+    expect(getByText("Card Set: Classic")).toBeInTheDocument()
+    expect(getByText("Rarity: Rare")).toBeInTheDocument()
+    expect(getByText("Flavor Text: spicy")).toBeInTheDocument()
+    expect(getByText("Artist: ME")).toBeInTheDocument()
+    expect(getByText("Card Name: Spellbender")).toBeInTheDocument()
+    expect(getByText("Add To Deck")).toBeInTheDocument()
+    expect(getByText("Back To Browse")).toBeInTheDocument()
+    expect(getByAltText("Spellbender")).toBeInTheDocument()
+  })
+
   it('should be able to add cards to deck', () => {
     const store = createStore(rootReducer)
     const mockAddCardToDeck = jest.fn()
