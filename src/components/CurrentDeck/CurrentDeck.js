@@ -2,6 +2,7 @@ import React from 'react'
 import './CurrentDeck.css'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom';
+import PropTypes from "prop-types";
 
 const CurrentDeck = props => {
   let cardsInDeck = props.currentlySelectedDeck.map(currentCard => {
@@ -26,3 +27,7 @@ const mapStateToProps = state => ({
 
 
 export default connect(mapStateToProps)(CurrentDeck)
+
+CurrentDeck.propTypes = {
+  currentlySelectedDeck: PropTypes.array,
+}

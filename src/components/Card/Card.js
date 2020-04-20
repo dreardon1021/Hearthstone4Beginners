@@ -1,6 +1,7 @@
 import React from 'react';
 import './Card.css'
 import { NavLink } from 'react-router-dom'
+import PropTypes from "prop-types";
 
 const Card = ({id, key, name, imgGold, addCardToDeck, removeCardFromDeck, currentPage }) => {
   let addOrRemoveButton = currentPage === 'home' ?
@@ -20,3 +21,14 @@ const Card = ({id, key, name, imgGold, addCardToDeck, removeCardFromDeck, curren
 }
 
 export default Card
+
+Card.propTypes = {
+  id: PropTypes.string,
+  key: PropTypes.string,
+  name: PropTypes.string,
+  imgGold: PropTypes.string,
+  addCardToDeck: PropTypes.func,
+  removeCardFromDeck: PropTypes.func,
+  currentPage: PropTypes.string,
+
+}

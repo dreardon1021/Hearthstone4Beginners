@@ -1,7 +1,8 @@
 import React from 'react';
-import Card from '../Card/Card'
-import './ViewDeckContainer.css'
+import Card from '../Card/Card';
+import './ViewDeckContainer.css';
 import { connect } from 'react-redux';
+import PropTypes from "prop-types";
 
 const ViewDeckContainer = props => {
   let cardList;
@@ -37,3 +38,14 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(ViewDeckContainer)
+
+ViewDeckContainer.propTypes = {
+  cardId: PropTypes.string,
+  name: PropTypes.string,
+  img: PropTypes.string,
+  imgGold: PropTypes.string,
+  addCardToDeck: PropTypes.func,
+  removeCardFromDeck: PropTypes.func,
+  currentDeck: PropTypes.array
+}
+

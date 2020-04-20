@@ -2,6 +2,7 @@ import React from 'react';
 import Card from '../Card/Card'
 import './CardListContainer.css'
 import { connect } from 'react-redux';
+import PropTypes from "prop-types";
 
 const CardListContainer = props => {
   let cardList = props.classicCards.map(card => {
@@ -33,3 +34,13 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(CardListContainer)
+
+CardListContainer.propTypes = {
+  cardId: PropTypes.string,
+  name: PropTypes.string,
+  img: PropTypes.string,
+  imgGold: PropTypes.string,
+  addCardToDeck: PropTypes.func,
+  removeCardFromDeck: PropTypes.func,
+  currentPage: PropTypes.string,
+}

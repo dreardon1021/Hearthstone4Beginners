@@ -15,7 +15,7 @@ describe('Card', () => {
       <Provider store={store}>
         <Router>
           <Card
-            id={1}
+            id={"1"}
             name={'Circle of Healing'}
             imgGold={"http://media.services.zam.com/v1/media/byName/hs/cards/enus/animated/EX1_607_premium.gif"}
             currentPage={"home"}

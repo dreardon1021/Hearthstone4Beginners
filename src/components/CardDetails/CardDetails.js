@@ -1,6 +1,7 @@
 import React from 'react';
 import './CardDetails.css'
 import { NavLink } from 'react-router-dom'
+import PropTypes from "prop-types";
 
 const CardDetails = props =>  {
   let cardToRender = props.type === 'spell' ?
@@ -43,3 +44,17 @@ const CardDetails = props =>  {
 }
 
 export default CardDetails
+
+CardDetails.propTypes = {
+  cost: PropTypes.string,
+  playerClass: PropTypes.string,
+  text: PropTypes.string,
+  type: PropTypes.string,
+  cardSet: PropTypes.string,
+  rarity: PropTypes.string,
+  flavor: PropTypes.string,
+  artist: PropTypes.string,
+  attack: PropTypes.string,
+  health: PropTypes.string,
+  addCardToDeck: PropTypes.func
+}

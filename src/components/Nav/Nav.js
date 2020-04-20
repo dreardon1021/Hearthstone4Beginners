@@ -1,6 +1,7 @@
 import React from 'react';
 import './Nav.css';
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
+import PropTypes from "prop-types";
 
 
 const Nav = ({ changePage, currentPage }) => {
@@ -24,3 +25,8 @@ const Nav = ({ changePage, currentPage }) => {
 }
 
 export default Nav
+
+Nav.propTypes = {
+  changePage: PropTypes.func,
+  currentPage: PropTypes.string
+}
