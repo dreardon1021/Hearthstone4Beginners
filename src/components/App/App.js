@@ -109,7 +109,7 @@ class App extends Component {
                   changeDeck={this.changeDeck}
                   clearDeckStateOnSave={this.resetCurrentDeck}
                   />
-                <CardDetails {...card}/>
+                <CardDetails addCardToDeck={this.addCardToDeck} {...card}/>
               </section>)
           }}
         />

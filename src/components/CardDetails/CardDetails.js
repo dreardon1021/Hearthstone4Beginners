@@ -35,7 +35,7 @@ const CardDetails = props =>  {
         {cardToRender}
       </div>
       <div className="details-button-container">
-        <button className="details-add-btn">Add To Deck</button>
+        <button id={props.name} onClick={e => props.addCardToDeck(e.target.id)} className="details-add-btn">Add To Deck</button>
         <NavLink className="details-nav-link" to="/"><button className="details-back-btn">Back To Browse</button></NavLink>
       </div>
     </section>

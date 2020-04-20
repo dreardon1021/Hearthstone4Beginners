@@ -13,7 +13,7 @@ const CurrentDeck = props => {
       <h2 className="sidebar-header">Current Deck</h2>
       <ol className="deck-list">
         {cardsInDeck.map(card => {
-          return (<NavLink to={`/card-details/${card.cardId}`} className="deck-card-name"><li key={Date.now()}>{card.name}</li></NavLink>)
+          return (<NavLink to={`/card-details/${card.cardId}`} className="deck-card-name"><li data-testid={card.name + "-decklist"} key={Date.now()}>{card.name}</li></NavLink>)
         })}
       </ol>
     </section>

@@ -10,6 +10,8 @@ aside {
   justify-content: space-between;
   align-content: center;
   align-items: center;
+  position: sticky;
+  top: 8em;
 }
 
 .current-deck-area {

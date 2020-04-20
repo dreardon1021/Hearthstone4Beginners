@@ -22,7 +22,7 @@ const ViewDeckContainer = props => {
   } else {
     cardList = (<h2 className="no-card-msg">Your Deck Has No Cards</h2>)
   }
-  
+
 
   return(
     <section className="card-list-container">
