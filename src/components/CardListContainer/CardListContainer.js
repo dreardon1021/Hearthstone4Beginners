@@ -22,7 +22,7 @@ const CardListContainer = props => {
     })
 
   return(
-    <section className="card-list-container">
+    <section data-testid="card-list-container" className="card-list-container">
       {cardList}
     </section>
   )
