@@ -6,7 +6,7 @@ export const savedDecks = (state = [], action) => {
         let name = Object.keys(deck)
         return name[0]
       })
-      if(currentDeckNames.includes(incomingDeckName[0])) {
+      if (currentDeckNames.includes(incomingDeckName[0])) {
         let deckToRemove = state.find(deck => {
           let deckName = Object.keys(deck)
           return deckName[0] === incomingDeckName[0]

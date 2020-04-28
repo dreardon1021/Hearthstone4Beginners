@@ -12,7 +12,7 @@ class Form extends Component {
       name: ''
     }
   }
-E
+
   updateDeckNameState = (e) => {
     this.setState({name: e.target.value})
   }
