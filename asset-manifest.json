@@ -1,22 +1,23 @@
 {
   "files": {
     "main.css": "/Hearthstone4Beginners/static/css/main.8ad00709.chunk.css",
-    "main.js": "/Hearthstone4Beginners/static/js/main.ba8930e1.chunk.js",
-    "main.js.map": "/Hearthstone4Beginners/static/js/main.ba8930e1.chunk.js.map",
+    "main.js": "/Hearthstone4Beginners/static/js/main.9cd36e2a.chunk.js",
+    "main.js.map": "/Hearthstone4Beginners/static/js/main.9cd36e2a.chunk.js.map",
     "runtime-main.js": "/Hearthstone4Beginners/static/js/runtime-main.fdae59fe.js",
     "runtime-main.js.map": "/Hearthstone4Beginners/static/js/runtime-main.fdae59fe.js.map",
-    "static/js/2.c850f6cb.chunk.js": "/Hearthstone4Beginners/static/js/2.c850f6cb.chunk.js",
-    "static/js/2.c850f6cb.chunk.js.map": "/Hearthstone4Beginners/static/js/2.c850f6cb.chunk.js.map",
+    "static/js/2.a3e8fc80.chunk.js": "/Hearthstone4Beginners/static/js/2.a3e8fc80.chunk.js",
+    "static/js/2.a3e8fc80.chunk.js.map": "/Hearthstone4Beginners/static/js/2.a3e8fc80.chunk.js.map",
     "index.html": "/Hearthstone4Beginners/index.html",
-    "precache-manifest.cef3409098ef736be527745fde05b11e.js": "/Hearthstone4Beginners/precache-manifest.cef3409098ef736be527745fde05b11e.js",
+    "precache-manifest.0a2ac834c70c2ded7f1767bd96169d49.js": "/Hearthstone4Beginners/precache-manifest.0a2ac834c70c2ded7f1767bd96169d49.js",
     "service-worker.js": "/Hearthstone4Beginners/service-worker.js",
     "static/css/main.8ad00709.chunk.css.map": "/Hearthstone4Beginners/static/css/main.8ad00709.chunk.css.map",
-    "static/js/2.c850f6cb.chunk.js.LICENSE.txt": "/Hearthstone4Beginners/static/js/2.c850f6cb.chunk.js.LICENSE.txt"
+    "static/js/2.a3e8fc80.chunk.js.LICENSE.txt": "/Hearthstone4Beginners/static/js/2.a3e8fc80.chunk.js.LICENSE.txt",
+    "static/media/LogoHS.png": "/Hearthstone4Beginners/static/media/LogoHS.f0a0140b.png"
   },
   "entrypoints": [
     "static/js/runtime-main.fdae59fe.js",
-    "static/js/2.c850f6cb.chunk.js",
+    "static/js/2.a3e8fc80.chunk.js",
     "static/css/main.8ad00709.chunk.css",
-    "static/js/main.ba8930e1.chunk.js"
+    "static/js/main.9cd36e2a.chunk.js"
   ]
 }
