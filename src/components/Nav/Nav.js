@@ -2,6 +2,7 @@ import React from 'react';
 import './Nav.css';
 import { NavLink } from 'react-router-dom';
 import PropTypes from "prop-types";
+import logo from '../../LogoHS.png'
 
 
 const Nav = ({ changePage, currentPage }) => {
@@ -16,7 +17,7 @@ const Nav = ({ changePage, currentPage }) => {
   return (
     <nav>
       <div className="header-container">
-        <img className="header-logo" src="../../images/LogoHS.png" alt="hearthstone-logo"/>
+        <img className="header-logo" src={logo} alt="hearthstone-logo"/>
         <h1>Deck Creator For Beginners</h1>
       </div>
       {navBtn}
