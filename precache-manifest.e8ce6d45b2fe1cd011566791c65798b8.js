@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6487141d7e3c6361a06f77d023402016",
+    "revision": "e6c769f12960346fb9bbc4f15f97001f",
     "url": "/Hearthstone4Beginners/index.html"
   },
   {
-    "revision": "50a4aed87e413da7e3c6",
+    "revision": "dec229abc34f704d938a",
     "url": "/Hearthstone4Beginners/static/css/main.8ad00709.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Hearthstone4Beginners/static/js/2.c850f6cb.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "50a4aed87e413da7e3c6",
-    "url": "/Hearthstone4Beginners/static/js/main.ba8930e1.chunk.js"
+    "revision": "dec229abc34f704d938a",
+    "url": "/Hearthstone4Beginners/static/js/main.fd8f0107.chunk.js"
   },
   {
     "revision": "5c35ca1d8f3be56fe5f2",
