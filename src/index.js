@@ -11,7 +11,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 const store = createStore(rootReducer, composeWithDevTools());
 
-const router = <BrowserRouter basename="/Hearthstone4Beginners"><App></App></BrowserRouter>
+const router = <BrowserRouter><App></App></BrowserRouter>
 
 ReactDOM.render(
   <Provider store={store}>
